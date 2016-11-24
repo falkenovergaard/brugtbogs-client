@@ -4,6 +4,11 @@
 $(document).ready(function () {
 
 
+    $("#logOutLink").on("click", function () {
+        SDK.logOut();
+        window.location.href = "index.html";
+    });
+
     SDK.Ad.getAds(function(err, ads){
         if(err) throw(err);
 
@@ -44,9 +49,4 @@ $(document).ready(function () {
 
     });
 
-    $("#logOutLink").on("click", function () {
-        SDK.logOut();
-        window.location.href = "/index.html";
-
-    });
 });

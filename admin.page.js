@@ -9,8 +9,4 @@ $(document).ready(function () {
         window.location.href = "index.html";
     });
 
-
-    var currentUser = SDK.User.current();
-    $("#currentUserName").text(currentUser.userid);
-
 });
