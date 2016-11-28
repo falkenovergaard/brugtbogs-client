@@ -38,7 +38,7 @@ $(document).ready(function () {
                 console.log(user.username);
 
                 document.forms['form-horizontal'].reset()
-                window.location.href="index.html";
+                window.location.href="../index.html";
 
         });
 

@@ -38,6 +38,11 @@ var SDK = {
             SDK.request({method: "POST", url: "/createuser", data: data}, cb);
         },
 
+        getAll: function(cb){
+            SDK.request({method: "GET", url: "/getusers",
+            }, cb);
+        },
+
         current:function () {
             return SDK.Storage.load("user");
         },
@@ -55,13 +60,13 @@ var SDK = {
     Ad: {
         getAds: function (cb) {
             SDK.request({
-                method: "GET", url: "/getads"
+                method: "GET", url: "/getads",
             }, cb);
         },
 
         getMyAds: function (cb) {
             SDK.request({
-                method: "GET", url: "/getmyads"
+                method: "GET", url: "/getmyads",
             }, cb);
         },
     },
@@ -83,6 +88,8 @@ var SDK = {
         }, function (err, data) {
 
             if (err) return cb(err);
+
+
 
             SDK.Storage.persist("sessionId", data.sessionid);
             SDK.Storage.persist("userId", data.userId);

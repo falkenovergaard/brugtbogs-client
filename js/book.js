@@ -19,10 +19,10 @@ $(document).ready(function () {
         data.forEach(function (book, i) {
             $booksTableBody.append(
                 "<tr>" +
+                "<td>" + book.isbn + "</td>" +
                 "<td>" + book.title + "</td>" +
                 "<td>" + book.author  + "</td>" +
                 "<td>" + book.edition + "</td>" +
-                "<td>" + book.isbn + "</td>" +
                 "</tr>");
         });
 
