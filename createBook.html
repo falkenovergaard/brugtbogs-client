@@ -1,10 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css">
+
+
+    <!-- http://bootsnipp.com/snippets/featured/register-page -->
+
+    <!-- Website CSS style -->
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="lib/css/bootstrap.lumen.min.css">
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Opret bog</title>
 </head>
 <body>
+
+<div class="navbar navbar-default navbar-fixed">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">Brugtbogsbørs <til></til>!</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li><a href="admin.html">Adminside</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row main">
+        <div class="panel-heading">
+            <div class="panel-title text-lg-center">
+                <h1 class="title">Indtast bogens oplysninger</h1>
+                <hr />
+            </div>
+        </div>
+        <div class="main-login main-center">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="newIsbn" class="cols-sm-2 control-label">ISBN</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-barcode fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" id="newIsbn"  placeholder="Indtast ISBN-nummer"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="newTitle" class="cols-sm-2 control-label">Titel</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-book" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" id="newTitle"  placeholder="Indtast bogens titel"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="newEdition" class="cols-sm-2 control-label">'Version</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-sticky-note" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" id="newEdition"  placeholder="Indtast bogens version"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="newAuthor" class="col-sm-2 control-label">Forfatter(e)</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" id="newAuthor" placeholder="Indtast forfatter(e)"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <button type="button" class="btn btn-primary btn-lg btn-block login-button" id="createBookButton">Opret bog</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="lib/js/jquery-3.1.1.js"></script>
+<script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap -->
+<script src="lib/js/bootstrap.js"></script>
+<script src="js/sdktest.js"></script>
+<script src="js/book.js"></script>
+
 
 </body>
 </html>

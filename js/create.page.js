@@ -32,13 +32,13 @@ $(document).ready(function () {
                 transfer: transferIsChosen
             };
 
-            SDK.User.create(user, function(err, data) {
+            SDK.User.create(user, function(err) {
                 if (err) throw err ;
 
-                console.log(user.username);
+                //Alert missing
 
                 document.forms['form-horizontal'].reset()
-                window.location.href="../index.html";
+                window.location.href="index.html";
 
         });
 

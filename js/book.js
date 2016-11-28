@@ -33,6 +33,26 @@ $(document).ready(function () {
         });
     });
 
+
+    $("#createBookButton").on("click", function(){
+
+        var book = {
+            isbn: parseInt($("#newIsbn").val()),
+            title: $("#newTitle").val(),
+            edition: $("#newEdition").val(),
+            author: $("#newAuthor").val(),
+        };
+
+        SDK.Book.create(book, function(err){
+            if (err) throw err;
+
+            document.forms['form-horizontal'].reset();
+            window.alert("Bog med isbn" + book.isbn + "blev oprettet");
+        })
+    });
+
+
+
 //    var currentUser = SDK.User.current();
   //  $("#currentUserName").text(currentUser.firstName +  " " + currentUser.lastName);
 

@@ -55,6 +55,10 @@ var SDK = {
                 method: "GET", url: "/getbooks",
             }, cb);
         },
+
+        create: function (data, cb){
+            SDK.request({method: "POST", url: "/createbook", data: data}, cb);
+        },
     },
 
     Ad: {
