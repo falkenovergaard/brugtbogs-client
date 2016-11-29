@@ -35,7 +35,7 @@ $(document).ready(function () {
             SDK.User.create(user, function(err) {
                 if (err) throw err ;
 
-                //Alert missing
+                window.alert("Du har nu oprettet bruger")
 
                 document.forms['form-horizontal'].reset()
                 window.location.href="index.html";

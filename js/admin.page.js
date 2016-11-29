@@ -3,6 +3,8 @@
  */
 $(document).ready(function () {
 
+    var currentUser = SDK.User.current();
+    $("#current").text(currentUser);
 
     SDK.User.getAll(function(err,data) {
         if (err) throw err;
@@ -20,7 +22,7 @@ $(document).ready(function () {
                 "<td>" + user.cash + "</td>" +
                 "<td>" + user.transfer + "</td>" +
                 "<td>" + user.type + "</td>" +
-                "<td><a id='deleteUser' role='button' class='btn btn-default btn-lg'>Slet</a></td>"+
+                "<td><a id='deleteUser' class='btn btn-default'>Slet</a></td>"+
                 "</tr>");
         });
     });

@@ -47,7 +47,7 @@ $(document).ready(function () {
             if (err) throw err;
 
             document.forms['form-horizontal'].reset();
-            window.alert("Bog med isbn" + book.isbn + "blev oprettet");
+            window.alert("Bog med isbn: /n" + book.isbn + "/nblev oprettet");
         })
     });
 

@@ -44,7 +44,7 @@ var SDK = {
         },
 
         current:function () {
-            return SDK.Storage.load("user");
+            return SDK.Storage.load("username");
         },
     },
 
@@ -70,13 +70,25 @@ var SDK = {
 
         getMyAds: function (cb) {
             SDK.request({
-                method: "GET", url: "/getmyads",
+                method: "GET", url: "/getmyads"}, cb);
+
+        },
+
+        createAd: function (cb){
+            SDK.request({
+                method: "POST", url: "/createad", data: data,
             }, cb);
         },
-    },
+
+        reserveAd: function (data, cb){
+            SDK.request({
+                method: "POST", url: "/reservead", data: data,}, cb);
+            },
+        },
+
 
     logOut:function() {
-        SDK.Storage.remove("tokenId");
+        SDK.Storage.remove("sessionId");
         SDK.Storage.remove("userId");
         SDK.Storage.remove("user");
     },
@@ -93,9 +105,7 @@ var SDK = {
 
             if (err) return cb(err);
 
-
-
-            SDK.Storage.persist("sessionId", data.sessionid);
+            SDK.Storage.persist("sessionId", data.password);
             SDK.Storage.persist("userId", data.userId);
             SDK.Storage.persist("username", data.username);
 
