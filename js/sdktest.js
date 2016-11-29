@@ -46,6 +46,10 @@ var SDK = {
         current:function () {
             return SDK.Storage.load("username");
         },
+
+        getMyReservations: function (cb){
+            SDK.request({method: "GET", url: "/getmyreservations"}, cb);
+        },
     },
 
 
@@ -64,20 +68,17 @@ var SDK = {
     Ad: {
         getAds: function (cb) {
             SDK.request({
-                method: "GET", url: "/getads",
-            }, cb);
+                method: "GET", url: "/getads",}, cb);
         },
 
         getMyAds: function (cb) {
             SDK.request({
                 method: "GET", url: "/getmyads"}, cb);
-
         },
 
-        createAd: function (cb){
+        createAd: function (data, cb){
             SDK.request({
-                method: "POST", url: "/createad", data: data,
-            }, cb);
+                method: "POST", url: "/createad", data: data,}, cb);
         },
 
         reserveAd: function (data, cb){

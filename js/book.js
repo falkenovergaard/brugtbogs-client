@@ -51,9 +51,4 @@ $(document).ready(function () {
         })
     });
 
-
-
-//    var currentUser = SDK.User.current();
-  //  $("#currentUserName").text(currentUser.firstName +  " " + currentUser.lastName);
-
 });

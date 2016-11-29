@@ -44,6 +44,28 @@ $(document).ready(function () {
 
     });
 
+    $("#createAdButton").on("click", function(){
+
+        var ad = {
+            isbn: parseInt($("#newIsbn").val()),
+            rating: parseInt($("#newAppearence").val()),
+            comment: $("#newComment").val(),
+            price: parseInt($("#newPrice").val()),
+
+        };
+
+        SDK.Ad.createAd(ad, function(err){
+            if (err) throw err;
+
+            window.alert("Du har nu oprettet en annonce")
+
+            document.forms['form-horizontal'].reset()
+            window.location.href="user.html";
+
+
+        });
+    });
+
 });
 
 

@@ -6,7 +6,7 @@ $(document).ready(function () {
     var currentUser = SDK.User.current();
     $("#current").text(currentUser);
 
-    SDK.User.getAll(function(err,data) {
+    SDK.User.getAll(function(err, data) {
         if (err) throw err;
 
         var $usersTableBody = $("#userTableBody");

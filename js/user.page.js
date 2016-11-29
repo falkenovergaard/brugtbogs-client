@@ -19,13 +19,13 @@ $(document).ready(function () {
 
             $adsTableBody.append(
                 "<tr>" +
+                "<td>" + ad.id + "</td>" +
                 "<td>" + ad.isbn + "</td>" +
                 "<td>" + ad.bookTitle + "</td>" +
                 "<td>" + ad.bookAuthor + "</td>" +
                 "<td>" + ad.bookEdition + "</td>" +
-                "<td>" + ad.price + "</td>" +
-                "<td>" + ad.comment + "</td>" +
                 "<td>" + ad.rating + "</td>" +
+                "<td>" + ad.price + "</td>" +
                 "<td><button id='reserveAdButton' class='btn-default btn'  data-adid="+ ad.adId +">Reservér</button></td>"+
                 "</tr>");
         });
@@ -53,17 +53,45 @@ $(document).ready(function () {
         var $myAdsTableBody = $("#myAdsTableBody");
         ads.forEach(function (ad){
 
+            function locked() {
+                if (ad.locked == 1) {
+                    return "Ja";
+                } else {
+                    return "Nej";
+                }
+            }
+
             $myAdsTableBody.append(
                 "<tr>" +
-                "<td>" + ad.adId + "</td>" +
+                "<td>" + ad.id + "</td>" +
                 "<td>" + ad.isbn + "</td>" +
                 "<td>" + ad.price + "</td>" +
                 "<td>" + ad.rating + "</td>" +
                 "<td>" + ad.comment + "</td>" +
-                "<td>" + ad.locked + "</td>" +
+                "<td>" + locked() + "</td>" +
                 "</tr>");
         });
 
+
+
     });
+
+    SDK.User.getMyReservations(function(err,reservations){
+        if(err) throw(err);
+
+        var $myReservationsTableBody = $("#myReservationsTableBody");
+        reservations.forEach(function (reservation) {
+
+            $myReservationsTableBody.append(
+                "<tr>" +
+                "<td>" + reservation.id + "</td>" +
+                "<td>" + reservation.timestamp + "</td>" +
+                "<td>" + reservation.bookIsbn + "</td>" +
+                "<td>" + reservation.userUsername + "</td>" +
+                "<td>" + reservation.userPhonenumber + "</td>" +
+                "</tr>");
+
+        });
+        });
 
 });

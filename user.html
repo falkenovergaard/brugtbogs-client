@@ -39,36 +39,37 @@
 
 
     <div class="container">
-        <div class="page-header" id="viewPlaceHolder">
+        <div class="page-header">
             <h1>Alle Annoncer</h1>
         </div>
         <table class="table">
             <thead>
+            <th>Annonce ID</th>
             <th>ISBN</th>
             <th>Titel</th>
             <th>Forfatter</th>
             <th>Version</th>
-            <th>Pris</th>
-            <th>Kommentar</th>
             <th>Rating</th>
+            <th>Pris</th>
             </thead>
             <tbody id="adsTableBody">
             </tbody>
         </table>
     </div>
 
+
     <div class="container">
-        <div class="page-header" id="viewPlaceHolder1">
+        <div class="page-header">
             <h1>Mine Annoncer</h1>
         </div>
         <table class="table">
             <thead>
             <th>ID</th>
             <th>ISBN</th>
-            <th>Titel</th>
             <th>Pris</th>
             <th>Rating</th>
             <th>Kommentar</th>
+            <th>Reserveret</th>
             </thead>
             <tbody id="myAdsTableBody">
             </tbody>
@@ -77,6 +78,25 @@
             <span class="glyphicon"></span> Opret annonce
         </button>
     </div>
+
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Mine reservationer</h1>
+        </div>
+        <table class="table">
+            <thead>
+            <th>AnnonceID</th>
+            <th>Reservationstidspunkt</th>
+            <th>Bogens ISBN</th>
+            <th>Ejer af Annoncen</th>
+            <th>Ejers telefonnummer</th>
+            </thead>
+            <tbody id="myReservationsTableBody">
+            </tbody>
+        </table>
+    </div>
+
 
     <script src="lib/js/jquery-3.1.1.js"></script>
     <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap -->
