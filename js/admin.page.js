@@ -22,8 +22,25 @@ $(document).ready(function () {
                 "<td>" + user.cash + "</td>" +
                 "<td>" + user.transfer + "</td>" +
                 "<td>" + user.type + "</td>" +
-                "<td><a id='deleteUser' class='btn btn-default'>Slet</a></td>"+
+                "<td><button id='deleteUserButton' class='btn-default btn' data-userid="+ user.userId + ">Slet</button></td>"+
                 "</tr>");
+        });
+
+        $("#deleteUserButton").on("click", function (){
+            window.alert("suppe")
+
+            var $deleteUser = $(this);
+
+            var userId = {
+                id : $deleteUser.data("userId")
+            }
+
+            SDK.User.delete(userId, function(err){
+                if (err) throw err;
+                location.reload();
+
+            });
+
         });
     });
 

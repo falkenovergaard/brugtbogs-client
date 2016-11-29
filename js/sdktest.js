@@ -8,19 +8,11 @@ var SDK = {
 
     request: function (options, cb) {
 
-        var headers = {};
-        if (options.headers) {
-            Object.keys(options.headers).forEach(function (h) {
-                headers[h] = (typeof options.headers[h] === 'object') ? JSON.stringify(options.headers[h]) : options.headers[h];
-            });
-        }
-
         //Perform XHR
         $.ajax({
             url: SDK.serverURL + options.url,
             method: options.method,
             contentType: "application/json",
-            headers: headers,
             dataType: "json",
             data: JSON.stringify(options.data),
             xhrFields: {withCredentials: true },
@@ -49,6 +41,14 @@ var SDK = {
 
         getMyReservations: function (cb){
             SDK.request({method: "GET", url: "/getmyreservations"}, cb);
+        },
+
+        delete: function(cb){
+            SDK.request({method: "DELETE", url: "/deleteuser"}, cb);
+        },
+
+        update: function(data, cb){
+            SDK.request({method: "POST", url:"/updateuser",data:data},cb);
         },
     },
 

@@ -19,7 +19,7 @@ $(document).ready(function () {
 
             $adsTableBody.append(
                 "<tr>" +
-                "<td>" + ad.id + "</td>" +
+                "<td>" + ad.adId + "</td>" +
                 "<td>" + ad.isbn + "</td>" +
                 "<td>" + ad.bookTitle + "</td>" +
                 "<td>" + ad.bookAuthor + "</td>" +
@@ -27,8 +27,12 @@ $(document).ready(function () {
                 "<td>" + ad.rating + "</td>" +
                 "<td>" + ad.price + "</td>" +
                 "<td><button id='reserveAdButton' class='btn-default btn'  data-adid="+ ad.adId +">Reservér</button></td>"+
+                "<td><button id='showAdButton' class='btn-default btn'  data-adid="+ ad.adId +">Vis Annonce</button></td>"+
                 "</tr>");
         });
+
+
+
 
         $("#reserveAdButton").on("click", function (){
 
@@ -40,12 +44,54 @@ $(document).ready(function () {
 
             SDK.Ad.reserveAd(adId, function(err, data){
                 if (err) throw err;
-                location.reload
+                location.reload();
 
             });
 
         });
     });
+
+
+    $("#updateUserButton").on("click", function () {
+
+        var mobileIsChosen = 0;
+        if ($("input[name=mobilepay]:checked").val()) {
+            mobileIsChosen = 1;
+        }
+        var cashIsChosen = 0;
+        if ($("input[name=cash]:checked").val()) {
+            cashIsChosen = 1;
+        }
+        var transferIsChosen = 0;
+        if ($("input[name=transfer]:checked").val()) {
+            transferIsChosen = 1;
+        }
+
+        //Create JSON object
+        var updatedUser = {
+            username: $("#newUsername").val(),
+            email: $("#newEmail").val(),
+            phonenumber: parseInt($("#newPhonenumber").val()),
+            address: $("#newAddress").val(),
+
+            mobilepay: mobileIsChosen,
+            cash: cashIsChosen,
+            transfer: transferIsChosen
+        };
+
+
+        SDK.User.update(updatedUser, function (err) {
+            if (err)throw err;
+
+            window.alert("Du har nu opdateret din bruger")
+
+            document.forms['form-horizontal'].reset()
+            window.location.href = "user.html";
+
+
+        });
+    });
+
 
     SDK.Ad.getMyAds(function(err, ads){
         if(err) throw(err);
@@ -63,7 +109,7 @@ $(document).ready(function () {
 
             $myAdsTableBody.append(
                 "<tr>" +
-                "<td>" + ad.id + "</td>" +
+                "<td>" + ad.adId + "</td>" +
                 "<td>" + ad.isbn + "</td>" +
                 "<td>" + ad.price + "</td>" +
                 "<td>" + ad.rating + "</td>" +
@@ -84,7 +130,7 @@ $(document).ready(function () {
 
             $myReservationsTableBody.append(
                 "<tr>" +
-                "<td>" + reservation.id + "</td>" +
+                "<td>" + reservation.adId + "</td>" +
                 "<td>" + reservation.timestamp + "</td>" +
                 "<td>" + reservation.bookIsbn + "</td>" +
                 "<td>" + reservation.userUsername + "</td>" +
@@ -93,5 +139,7 @@ $(document).ready(function () {
 
         });
         });
+
+
 
 });

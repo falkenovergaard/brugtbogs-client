@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css">
 
 
-<!-- http://bootsnipp.com/snippets/featured/register-page -->
+    <!-- http://bootsnipp.com/snippets/featured/register-page -->
 
     <!-- Website CSS style -->
     <link rel="stylesheet" type="text/css" href="css/css.css">
@@ -22,7 +22,7 @@
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
     <meta charset="UTF-8">
-    <title>Opret bruger</title>
+    <title>Opdatér bruger</title>
 </head>
 <body>
 
@@ -36,24 +36,30 @@
             </button>
             <a class="navbar-brand">Brugtbogsbørsen<til></til>!</a>
         </div>
-            <div class="navbar-collapse collapse" id="navbar-main">
-                <ul class="nav navbar-nav">
-                    <li><a href="BookOverview.html">Se alle bøger</a>
-                    </li>
+
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li><a href="user.html">Annonce Overblik</a>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><input type="button" class="btn btn-default" value="Log ud" id="logOutLink"></li>
                 </ul>
-            </div>
+            </form>
+
+        </div>
     </div>
 </div>
 
 
-    <div class="container">
-        <div class="row main">
-            <div class="panel-heading">
-                <div class="panel-title text-lg-center">
-                    <h1 class="title">Indtast brugeroplysninger</h1>
-                    <hr />
-                </div>
+<div class="container">
+    <div class="row main">
+        <div class="panel-heading">
+            <div class="panel-title text-lg-center">
+                <h1 class="title">Opdatér brugeroplysninger</h1>
+                <hr />
             </div>
+        </div>
         <div class="main-login main-center">
             <form class="form-horizontal">
                 <div class="form-group">
@@ -96,33 +102,24 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="newPassword" class="cols-sm-2 control-label">Kodeord</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" id="newPassword"  placeholder="Indtast kodeord"/>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Ønskede betalingsmetoder</label>
-                        <label class="input-group-addon">
-                            <input type="checkbox" name="mobilepay" id="mobilepay">
-                            Mobilepay
-                        </label>
-                        <label class="input-group-addon">
-                            <input type="checkbox" name="cash" id="cash">
-                            Kontant
-                        </label>
-                        <label class="input-group-addon">
-                            <input type="checkbox" name="transfer" id="transfer">
-                            Dankort
-                        </label>
-                    </div>
+                    <label class="input-group-addon">
+                        <input type="checkbox" name="mobilepay" id="mobilepay">
+                        Mobilepay
+                    </label>
+                    <label class="input-group-addon">
+                        <input type="checkbox" name="cash" id="cash">
+                        Kontant
+                    </label>
+                    <label class="input-group-addon">
+                        <input type="checkbox" name="transfer" id="transfer">
+                        Dankort
+                    </label>
+                </div>
                 <div class="form-group ">
-                    <button type="button" class="btn btn-primary btn-block active" id="createUserButton">Registrer</button>
+                    <button type="button" class="btn btn-primary btn-block active" id="updateUserButton">Opdater</button>
                 </div>
 
             </form>
@@ -135,7 +132,7 @@
 <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap -->
 <script src="lib/js/bootstrap.js"></script>
 <script src="js/sdktest.js"></script>
-<script src="js/create.page.js"></script>
+<script src="js/user.page.js"></script>
 
 
 </body>
